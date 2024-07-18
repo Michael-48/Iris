@@ -8,24 +8,24 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
     "><meta data-rh="true" property="og:description" content="An internal class within Iris containing all the backend data and functions for Iris to operate.
 It is recommended that you don&#x27;t generally interact with Internal unless you understand what you are doing.
     "><link data-rh="true" rel="canonical" href="https://Michael-48.github.io/Iris/api/Internal"><link data-rh="true" rel="alternate" href="https://Michael-48.github.io/Iris/api/Internal" hreflang="en"><link data-rh="true" rel="alternate" href="https://Michael-48.github.io/Iris/api/Internal" hreflang="x-default"><link rel="stylesheet" href="/Iris/assets/css/styles.6b33bbd6.css">
-<link rel="preload" href="/Iris/assets/js/runtime~main.c4300c87.js" as="script">
-<link rel="preload" href="/Iris/assets/js/main.af96550f.js" as="script">
+<link rel="preload" href="/Iris/assets/js/runtime~main.4861c6c0.js" as="script">
+<link rel="preload" href="/Iris/assets/js/main.a2301958.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
-<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Iris/"><b class="navbar__title text--truncate">Iris</b></a><a class="navbar__item navbar__link" href="/Iris/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Iris/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Michael-48/Iris" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Press S to Search..." aria-label="Search" class="navbar__search-input search-bar"></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Iris/api/Iris">​Iris</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/Iris/api/Window">Widgets</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Iris/api/State">​State</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/Iris/api/Internal">​Internal</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Iris/api/Plot">​Plot</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Internal</span></h1><div class="luaClassTags_EipM"></div><div>
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Iris/"><b class="navbar__title text--truncate">Iris</b></a><a class="navbar__item navbar__link" href="/Iris/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Iris/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Michael-48/Iris" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Press S to Search..." aria-label="Search" class="navbar__search-input search-bar"></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Iris/api/Iris">​Iris</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/Iris/api/Window">Widgets</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Iris/api/State">​State</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/Iris/api/Internal">​Internal</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Internal</span></h1><div class="luaClassTags_EipM"></div><div>
 <p>
   An internal class within Iris containing all the backend data and functions for Iris to operate.
   It is recommended that you don't generally interact with Internal unless you understand what you are doing.
 </p>
-</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_cycleCoroutine"><code style="text-decoration:none">_cycleCoroutine</code><a href="#_cycleCoroutine" class="hash-link" aria-label="Direct link to _cycleCoroutine" title="Direct link to _cycleCoroutine">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L69"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.<!-- -->_cycleCoroutine<!-- -->:<!-- --> </code> <code class="blue_P4bS">thread</code></div><div>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_cycleCoroutine"><code style="text-decoration:none">_cycleCoroutine</code><a href="#_cycleCoroutine" class="hash-link" aria-label="Direct link to _cycleCoroutine" title="Direct link to _cycleCoroutine">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L69"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.<!-- -->_cycleCoroutine<!-- -->:<!-- --> </code> <code class="blue_P4bS">thread</code></div><div>
 <p>
   The thread which handles all connected functions. Each connection is within a pcall statement which prevents
   Iris from crashing and instead stopping at the error.
 </p>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_cycle"><code style="text-decoration:none">_cycle</code><a href="#_cycle" class="hash-link" aria-label="Direct link to _cycle" title="Direct link to _cycle">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L177"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_cycle</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_cycle"><code style="text-decoration:none">_cycle</code><a href="#_cycle" class="hash-link" aria-label="Direct link to _cycle" title="Direct link to _cycle">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L181"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_cycle</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Called every frame to handle all of the widget management. Any previous frame data is ammended and everything updates.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="WidgetConstructor"><code style="text-decoration:none">WidgetConstructor</code><a href="#WidgetConstructor" class="hash-link" aria-label="Direct link to WidgetConstructor" title="Direct link to WidgetConstructor">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L294"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">WidgetConstructor</code><code>(</code><div class="inset_uKQm"><div><code>type<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="WidgetConstructor"><code style="text-decoration:none">WidgetConstructor</code><a href="#WidgetConstructor" class="hash-link" aria-label="Direct link to WidgetConstructor" title="Direct link to WidgetConstructor">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L298"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">WidgetConstructor</code><code>(</code><div class="inset_uKQm"><div><code>type<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>name used to denote the widget class.</p>
 </span></span></div><div><code>widgetClass<!-- -->: </code><code class="blue_P4bS">Types.WidgetClass</code><span class="inlineDescription_G7Er">-- <span>
 <p>table of methods for the new widget.</p>
@@ -35,7 +35,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
   of widgets, and simplifies the available functions which can be applied to any widget. The widgets themselves are
   dumb tables containing all the data but no methods to handle any of the data apart from events.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_Insert"><code style="text-decoration:none">_Insert</code><a href="#_Insert" class="hash-link" aria-label="Direct link to _Insert" title="Direct link to _Insert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L403"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_Insert</code><code>(</code><div class="inset_uKQm"><div><code>widgetType:<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_Insert"><code style="text-decoration:none">_Insert</code><a href="#_Insert" class="hash-link" aria-label="Direct link to _Insert" title="Direct link to _Insert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L407"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_Insert</code><code>(</code><div class="inset_uKQm"><div><code>widgetType:<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>name of widget class.</p>
 </span></span></div><div><code>arguments<!-- -->: </code><code class="blue_P4bS">Types.WidgetArguments?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>arguments of the widget.</p>
@@ -48,7 +48,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
   Every widget is created through _Insert. An ID is generated based on the line of the calling code and is used to
   find the previous frame widget if it exists. If no widget exists, a new one is created.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_GenNewWidget"><code style="text-decoration:none">_GenNewWidget</code><a href="#_GenNewWidget" class="hash-link" aria-label="Direct link to _GenNewWidget" title="Direct link to _GenNewWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L483"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_GenNewWidget</code><code>(</code><div class="inset_uKQm"><div><code>widgetType<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>arguments<!-- -->: </code><code class="blue_P4bS">Types.Arguments</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_GenNewWidget"><code style="text-decoration:none">_GenNewWidget</code><a href="#_GenNewWidget" class="hash-link" aria-label="Direct link to _GenNewWidget" title="Direct link to _GenNewWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L487"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_GenNewWidget</code><code>(</code><div class="inset_uKQm"><div><code>widgetType<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>arguments<!-- -->: </code><code class="blue_P4bS">Types.Arguments</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>arguments of the widget.</p>
 </span></span></div><div><code>states<!-- -->: </code><code class="blue_P4bS">Types.States?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>states of the widget.</p>
@@ -61,7 +61,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
   All widgets are created as tables with properties. The widget class contains the functions to create the UI instances and
   update the widget or change state.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_ContinueWidget"><code style="text-decoration:none">_ContinueWidget</code><a href="#_ContinueWidget" class="hash-link" aria-label="Direct link to _ContinueWidget" title="Direct link to _ContinueWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L557"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_ContinueWidget</code><code>(</code><div class="inset_uKQm"><div><code>ID<!-- -->: </code><code class="blue_P4bS">Types.ID</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_ContinueWidget"><code style="text-decoration:none">_ContinueWidget</code><a href="#_ContinueWidget" class="hash-link" aria-label="Direct link to _ContinueWidget" title="Direct link to _ContinueWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L561"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_ContinueWidget</code><code>(</code><div class="inset_uKQm"><div><code>ID<!-- -->: </code><code class="blue_P4bS">Types.ID</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>id of the widget.</p>
 </span></span></div><div><code>widgetType<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">Types.Widget</code><span class="inlineDescription_G7Er">-- <span>
 <p>the widget.</p>
@@ -71,13 +71,13 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
   arguments or states.
   Basically equivalent to the end of <code>Internal._Insert</code>.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_DiscardWidget"><code style="text-decoration:none">_DiscardWidget</code><a href="#_DiscardWidget" class="hash-link" aria-label="Direct link to _DiscardWidget" title="Direct link to _DiscardWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L580"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_DiscardWidget</code><code>(</code><code>widgetToDiscard<!-- -->: </code><code class="blue_P4bS">Types.Widget</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_DiscardWidget"><code style="text-decoration:none">_DiscardWidget</code><a href="#_DiscardWidget" class="hash-link" aria-label="Direct link to _DiscardWidget" title="Direct link to _DiscardWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L584"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_DiscardWidget</code><code>(</code><code>widgetToDiscard<!-- -->: </code><code class="blue_P4bS">Types.Widget</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>
   Destroys the widget instance and updates any parent. This happens if the widget was not called in the
   previous frame. There is no code which needs to update any widget tables since they are already reset
   at the start before discarding happens.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_widgetState"><code style="text-decoration:none">_widgetState</code><a href="#_widgetState" class="hash-link" aria-label="Direct link to _widgetState" title="Direct link to _widgetState">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L602"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_widgetState</code><code>(</code><div class="inset_uKQm"><div><code>thisWidget<!-- -->: </code><code class="blue_P4bS">Types.Widget</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_widgetState"><code style="text-decoration:none">_widgetState</code><a href="#_widgetState" class="hash-link" aria-label="Direct link to _widgetState" title="Direct link to _widgetState">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L606"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_widgetState</code><code>(</code><div class="inset_uKQm"><div><code>thisWidget<!-- -->: </code><code class="blue_P4bS">Types.Widget</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>widget the state belongs to.</p>
 </span></span></div><div><code>stateName<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>initialValue<!-- -->: </code><code class="blue_P4bS">any</code></div></div><code>) → </code><code class="blue_P4bS">Types.State</code><span class="inlineDescription_G7Er">-- <span>
 <p>the state for the widget.</p>
@@ -86,18 +86,18 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
   Connects the state to the widget. If no state exists then a new one is created. Called for every state in every
   widget if the user does not provide a state.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_EventCall"><code style="text-decoration:none">_EventCall</code><a href="#_EventCall" class="hash-link" aria-label="Direct link to _EventCall" title="Direct link to _EventCall">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L628"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_EventCall</code><code>(</code><div class="inset_uKQm"><div><code>thisWidget<!-- -->: </code><code class="blue_P4bS">Types.Widget</code><code>,</code></div><div><code>evetName<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_EventCall"><code style="text-decoration:none">_EventCall</code><a href="#_EventCall" class="hash-link" aria-label="Direct link to _EventCall" title="Direct link to _EventCall">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L632"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_EventCall</code><code>(</code><div class="inset_uKQm"><div><code>thisWidget<!-- -->: </code><code class="blue_P4bS">Types.Widget</code><code>,</code></div><div><code>evetName<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
 <p>the value of the event.</p>
 </span></span></div><div>
 <p>
   A wrapper for any event on any widget. Automatically, Iris does not initialize events unless they are explicitly
   called so in the first frame, the event connections are set up. Every event is a function which returns a boolean.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_GetParentWidget"><code style="text-decoration:none">_GetParentWidget</code><a href="#_GetParentWidget" class="hash-link" aria-label="Direct link to _GetParentWidget" title="Direct link to _GetParentWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L647"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_GetParentWidget</code><code>(</code><code>) → </code><code class="blue_P4bS">Types.Widget</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_GetParentWidget"><code style="text-decoration:none">_GetParentWidget</code><a href="#_GetParentWidget" class="hash-link" aria-label="Direct link to _GetParentWidget" title="Direct link to _GetParentWidget">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L651"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_GetParentWidget</code><code>(</code><code>) → </code><code class="blue_P4bS">Types.Widget</code><span class="inlineDescription_G7Er">-- <span>
 <p>the parent widget</p>
 </span></span></div><div>
 <p>Returns the parent widget of the currently active widget, based on the stack depth.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_getID"><code style="text-decoration:none">_getID</code><a href="#_getID" class="hash-link" aria-label="Direct link to _getID" title="Direct link to _getID">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/master/lib/Internal.lua#L727"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_getID</code><code>(</code><div class="inset_uKQm"><div><code>levelsToIgnore<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="_getID"><code style="text-decoration:none">_getID</code><a href="#_getID" class="hash-link" aria-label="Direct link to _getID" title="Direct link to _getID">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Michael-48/Iris/blob/main/lib/Internal.lua#L731"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Internal<!-- -->.</code><code class="green_DgR4">_getID</code><code>(</code><div class="inset_uKQm"><div><code>levelsToIgnore<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>used to skip over internal calls to <code>_getID</code>.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>
@@ -114,7 +114,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 177,
+                &quot;line&quot;: 181,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -126,7 +126,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 280,
+                &quot;line&quot;: 284,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -148,7 +148,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 294,
+                &quot;line&quot;: 298,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -180,7 +180,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 403,
+                &quot;line&quot;: 407,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -217,7 +217,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 483,
+                &quot;line&quot;: 487,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -244,7 +244,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 557,
+                &quot;line&quot;: 561,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -261,7 +261,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 580,
+                &quot;line&quot;: 584,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -293,7 +293,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 602,
+                &quot;line&quot;: 606,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -320,7 +320,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 628,
+                &quot;line&quot;: 632,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -336,7 +336,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 647,
+                &quot;line&quot;: 651,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -348,7 +348,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 660,
+                &quot;line&quot;: 664,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -360,7 +360,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 673,
+                &quot;line&quot;: 677,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -372,7 +372,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 687,
+                &quot;line&quot;: 691,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -389,7 +389,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 727,
+                &quot;line&quot;: 731,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -412,7 +412,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 765,
+                &quot;line&quot;: 769,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         },
@@ -430,7 +430,7 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 795,
+                &quot;line&quot;: 799,
                 &quot;path&quot;: &quot;lib/Internal.lua&quot;
             }
         }
@@ -453,8 +453,8 @@ It is recommended that you don&#x27;t generally interact with Internal unless yo
         &quot;line&quot;: 9,
         &quot;path&quot;: &quot;lib/Internal.lua&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#_cycleCoroutine" class="table-of-contents__link toc-highlight">_cycleCoroutine</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#_ContinueWidget" class="table-of-contents__link toc-highlight">._ContinueWidget</a></li><li><a href="#_cycle" class="table-of-contents__link toc-highlight">._cycle</a></li><li><a href="#_DiscardWidget" class="table-of-contents__link toc-highlight">._DiscardWidget</a></li><li><a href="#_EventCall" class="table-of-contents__link toc-highlight">._EventCall</a></li><li><a href="#_GenNewWidget" class="table-of-contents__link toc-highlight">._GenNewWidget</a></li><li><a href="#_getID" class="table-of-contents__link toc-highlight">._getID</a></li><li><a href="#_GetParentWidget" class="table-of-contents__link toc-highlight">._GetParentWidget</a></li><li><a href="#_Insert" class="table-of-contents__link toc-highlight">._Insert</a></li><li><a href="#_widgetState" class="table-of-contents__link toc-highlight">._widgetState</a></li><li><a href="#WidgetConstructor" class="table-of-contents__link toc-highlight">.WidgetConstructor</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Michael_48</div></div></div></footer></div>
-<script src="/Iris/assets/js/runtime~main.c4300c87.js"></script>
-<script src="/Iris/assets/js/main.af96550f.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#_cycleCoroutine" class="table-of-contents__link toc-highlight">_cycleCoroutine</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#_ContinueWidget" class="table-of-contents__link toc-highlight">._ContinueWidget</a></li><li><a href="#_cycle" class="table-of-contents__link toc-highlight">._cycle</a></li><li><a href="#_DiscardWidget" class="table-of-contents__link toc-highlight">._DiscardWidget</a></li><li><a href="#_EventCall" class="table-of-contents__link toc-highlight">._EventCall</a></li><li><a href="#_GenNewWidget" class="table-of-contents__link toc-highlight">._GenNewWidget</a></li><li><a href="#_getID" class="table-of-contents__link toc-highlight">._getID</a></li><li><a href="#_GetParentWidget" class="table-of-contents__link toc-highlight">._GetParentWidget</a></li><li><a href="#_Insert" class="table-of-contents__link toc-highlight">._Insert</a></li><li><a href="#_widgetState" class="table-of-contents__link toc-highlight">._widgetState</a></li><li><a href="#WidgetConstructor" class="table-of-contents__link toc-highlight">.WidgetConstructor</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Michael_48</div></div></div></footer></div>
+<script src="/Iris/assets/js/runtime~main.4861c6c0.js"></script>
+<script src="/Iris/assets/js/main.a2301958.js"></script>
 </body>
 </html>
