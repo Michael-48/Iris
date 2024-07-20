@@ -383,6 +383,7 @@ return function(Iris: Types.Internal, widgets: Types.WidgetUtility)
 
             thisWidget.usesScreenGUI = Iris._config.UseScreenGUIs
             windowWidgets[thisWidget.ID] = thisWidget
+            thisWidget.postCycleCallbackIDs = {}
 
             local Window
             if thisWidget.usesScreenGUI then
@@ -784,6 +785,11 @@ return function(Iris: Types.Internal, widgets: Types.WidgetUtility)
                 resizeWindow = nil
                 isResizing = false
             end
+
+            for _, callbackID in thisWidget.postCycleCallbackIDs do
+                Iris._postCycleCallbacks[callbackID] = nil
+            end
+
             windowWidgets[thisWidget.ID] = nil
             thisWidget.Instance:Destroy()
             widgets.discardState(thisWidget)
@@ -902,6 +908,17 @@ return function(Iris: Types.Internal, widgets: Types.WidgetUtility)
             end
             if thisWidget.state.scrollDistance == nil then
                 thisWidget.state.scrollDistance = Iris._widgetState(thisWidget, "scrollDistance", 0)
+            end
+
+            -- this.state.size:OnChange() wasn't working so I'm doing this instead
+            local id = #Iris._postCycleCallbacks + 1
+            table.insert(thisWidget.postCycleCallbackIDs, id)
+            local lastSizeValue = thisWidget.state.size.value
+            Iris._postCycleCallbacks[id] = function()
+                if lastSizeValue ~= thisWidget.state.size.value then
+                    lastSizeValue = thisWidget.state.size.value
+                    Iris._windowUpdatedThisCycle = true
+                end
             end
         end,
     } :: Types.WidgetClass)

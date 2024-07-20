@@ -35,6 +35,8 @@ return function(Iris: Types.Internal, widgets: Types.WidgetUtility)
             -- reference to these is stored as an optimization
             thisWidget.ColumnInstances = {}
             thisWidget.CellInstances = {}
+            thisWidget.postCycleCallbackIDs = {}
+            thisWidget.CellSizeUpdateNeeded = false
 
             local Table: Frame = Instance.new("Frame")
             Table.Name = "Iris_Table"
@@ -84,6 +86,91 @@ return function(Iris: Types.Internal, widgets: Types.WidgetUtility)
                     thisWidget.ColumnInstances[index] = Column
                     Column.Parent = Table
                 end
+
+                -- Resize the table cells to match the largest cell in the row
+                local function UpdateCellSizes()
+                    if not thisWidget.CellSizeUpdateNeeded and not Iris._windowUpdatedThisCycle then
+                        return
+                    end
+
+                    thisWidget.CellSizeUpdateNeeded = false
+
+                    debug.profilebegin("Iris/UpdateCellSizes")
+
+                    local columnCells = {}
+                    local mostRowsColumn, mostRowsCount = nil, 0
+                    for _, Column in thisWidget.ColumnInstances do
+                        columnCells[Column] = {}
+                        for i, Cell in Column:GetChildren() do
+                            if Cell:IsA("Frame") then
+                                -- Reset the size of the cell to normal so it can size down if needed
+                                Cell.Size = UDim2.new(1, 0, 0, 0)
+                                table.insert(columnCells[Column], {
+                                    Cell = Cell,
+                                    LayoutOrder = Cell.LayoutOrder,
+                                })
+
+                                -- table.maxn is 15x faster than table.getn (#table)
+                                if table.maxn(columnCells[Column]) > mostRowsCount then
+                                    mostRowsColumn = Column
+                                    mostRowsCount = table.maxn(columnCells[Column])
+                                end
+                            end
+                        end
+                    end
+
+                    for _, cells in columnCells do
+                        table.sort(cells, function(a, b)
+                            return a.LayoutOrder < b.LayoutOrder
+                        end)
+                    end
+
+                    for row, cellData in columnCells[mostRowsColumn] do
+                        -- Compare other cells in this row
+                        local cell = cellData.Cell
+                        local largestYSize = cell.AbsoluteSize.Y
+                        
+                        -- Find the largest cell in the row
+                        for _, otherColumn in columnCells do
+                            if otherColumn == mostRowsColumn then
+                                continue
+                            end
+
+                            -- edge case for when the other column has less cells than the column
+                            -- with the most rows
+                            if not otherColumn[row] then
+                                continue
+                            end
+
+                            if otherColumn[row].Cell.AbsoluteSize.Y > largestYSize then
+                                largestYSize = otherColumn[row].Cell.AbsoluteSize.Y
+                            end
+                        end
+
+                        -- Set the size of all cells in this row to the largest cell in the row
+                        for _, otherColumn in columnCells do
+                            if otherColumn == mostRowsColumn then
+                                continue
+                            end
+
+                            -- edge case for when the other column has less cells than the column
+                            -- with the most rows
+                            if not otherColumn[row] then
+                                continue
+                            end
+
+                            otherColumn[row].Cell.Size = UDim2.new(1, 0, 0, largestYSize)
+                        end
+                    end
+
+                    debug.profileend()
+                end
+
+                task.defer(UpdateCellSizes)
+
+                local id = #Iris._postCycleCallbacks + 1
+                table.insert(thisWidget.postCycleCallbackIDs, id)
+                Iris._postCycleCallbacks[id] = UpdateCellSizes
             elseif thisWidget.arguments.NumColumns ~= thisWidget.InitialNumColumns then
                 -- its possible to make it so that the NumColumns can increase,
                 -- but decreasing it would interfere with child widget instances
@@ -116,8 +203,13 @@ return function(Iris: Types.Internal, widgets: Types.WidgetUtility)
         Discard = function(thisWidget: Types.Widget)
             tableWidgets[thisWidget.ID] = nil
             thisWidget.Instance:Destroy()
+
+            for _, id in thisWidget.postCycleCallbackIDs do
+                Iris._postCycleCallbacks[id] = nil
+            end
         end,
         ChildAdded = function(thisWidget: Types.Widget)
+            thisWidget.CellSizeUpdateNeeded = true
             if thisWidget.RowColumnIndex == 0 then
                 thisWidget.RowColumnIndex = 1
             end

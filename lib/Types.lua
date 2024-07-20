@@ -126,12 +126,14 @@ export type Widget = {
     usesScreenGUI: boolean,
     ButtonColors: { [string]: Color3 | number },
     ComboChildrenHeight: number,
+    postCycleCallbackIDs: { number },
 
     -- Table properties
     RowColumnIndex: number,
     InitialNumColumns: number,
     ColumnInstances: { Frame },
     CellInstances: { Frame },
+    CellSizeUpdateNeeded: boolean,
 
     -- Event Props
     isHoveredEvent: boolean,
@@ -290,6 +292,7 @@ export type Internal = {
     SelectionImageObject: Frame,
     parentInstance: BasePlayerGui,
     _utility: WidgetUtility,
+    _windowUpdatedThisCycle: boolean,
 
     -- Config
     _rootConfig: Config,
