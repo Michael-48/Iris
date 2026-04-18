@@ -470,13 +470,13 @@ return function(Iris: Types.Iris): Types.Internal
         table.freeze(arguments)
 
         local lastWidget = Internal._lastVDOM[ID]
-		if lastWidget then
-			if Internal._refreshCounter > 0 or widgetType ~= lastWidget.type then
-				-- every widget is being redrawn, or this widget type has changed
-				Internal._DiscardWidget(lastWidget)
-				lastWidget = nil
-			end
-		end
+        if lastWidget then
+            if Internal._refreshCounter > 0 or widgetType ~= lastWidget.type then
+                -- every widget is being redrawn, or this widget type has changed
+                Internal._DiscardWidget(lastWidget)
+                lastWidget = nil
+            end
+        end
         local thisWidget = if lastWidget == nil then Internal._GenNewWidget(widgetType, arguments, states, ID) else lastWidget
 
         local parentWidget = thisWidget.parentWidget
